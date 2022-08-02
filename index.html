@@ -31,14 +31,14 @@
     </section>
 
     <!--Search Bar-->
-    <div class="columns">
+    <div class="columns mt-3 ml-3 mr-3 ">
         <div class="column is-quarter">
             <div class="field has-addons">
-                <div class="control pt-3">
+                <div class="control">
                     <input class="input" type="text" placeholder="Search for a dog">
                 </div>
-                <div class="control pt-3">
-                    <a class="button is-info">
+                <div class="control">
+                    <a class="button is-info" id="searchButton">
                         Search
                     </a>
                 </div>
@@ -57,21 +57,33 @@
                 <!--Text to hold random name generator-->
                 <div class="card-content">
                     <div class="content">
-                        <p class="has-text-centered">Lola</p>
+                        <p class="has-text-centered" id="randomName"></p>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Column for spacing-->
-        <div class="column"></div>
+        <div class="column">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content has-text-centered">
+                        <p class="Shedding"></p>
+                        <p class="Drooling"></p>
+                        <p class="Playfulness"></p>
+                        <p class="Energy"></p>
+                        <p class="Barking"></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
-
-
-
+    <!--Linking jQuery and JS file-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="assets/script.js"></script>
+
 </body>
 
 </html>
