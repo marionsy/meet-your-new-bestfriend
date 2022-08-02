@@ -1,3 +1,38 @@
-.input {
-    width: 250px;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    font-family: "Montserrat";
 }
+
+html {
+    background-image: url("https://cdn11.bigcommerce.com/s-bv977zbkdy/images/stencil/1000x1000/products/5320/26234/3552__21168.1616075166.jpg?c=1");
+}
+
+.hero, #searchButton {
+    background-color: rgb(115, 147, 178);
+}
+
+.title {
+    color: white;
+    font-size: 45px;
+}
+
+#searchButton {
+    color: white;
+}
+
+.input {
+    width: 250%;
+    font-family: "Montserrat";
+}
+
+#randomName {
+    font-size: 25px;
+    font-style: bold;
+}
+
+.fact {
+    font-size: 25px;
+    font-style: bold;
+}
+
