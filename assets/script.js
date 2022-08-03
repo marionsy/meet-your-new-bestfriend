@@ -4,7 +4,6 @@ var fact = $("#funFact");
 // Function to search for a dog
 function getDog(dog) {
     var apiUrl = "https://api.api-ninjas.com/v1/dogs?name=" + dog;
-
     $.ajax({
         url: apiUrl,
         method: "GET",
@@ -33,7 +32,8 @@ function getDog(dog) {
             $(".barking").text("Barking: " + barking);
             $(".playfulness").text("Playfulness: " + playfulness);
             $(".energy").text("Energy: " + energy);
-            $(".card").removeClass("is-hidden");
+            $(".card").removeClass("is-hidden");           
+        
         }
     });
 }
@@ -66,11 +66,32 @@ function saveDog(dog) {
     $("#searchHistory").append(dogButton);
 }
 
+
+function getname(){
+    $.ajax({
+        method: 'get',
+        url: "https://randommer.io/api/Name?nameType=firstname&quantity=1",
+        headers:{'X-Api-Key': 'fa076152de464fcab45e7657f043f76c'},
+        contentType: 'application/json',
+        success: function(result){
+             console.log(result)       
+                var name = result[0]
+                $("#randomName").text(name)
+        },
+        error: function ajaxError(json) {
+             console.error('Error: ', json.responseText);
+
+        // Appends name to card
+    }
+})
+}
+
+
 // On click, calls getDog function
 $("#searchButton").on("click", function (event) {
     event.preventDefault();
     var dog = $("#dogSearch").val();
     getDog(dog);
     saveDog(dog);
+    getname();
 })
-
