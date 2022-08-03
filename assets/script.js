@@ -33,7 +33,6 @@ function getDog(dog) {
             $(".playfulness").text("Playfulness: " + playfulness);
             $(".energy").text("Energy: " + energy);
             $(".card").removeClass("is-hidden");
-
         }
     });
 }
