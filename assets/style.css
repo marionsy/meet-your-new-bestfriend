@@ -14,7 +14,8 @@ html {
 
 .title {
     color: white;
-    font-size: 45px;
+    font-size: 50px;
+    font-weight: lighter;
 }
 
 #searchButton {
@@ -29,6 +30,7 @@ html {
 #randomName {
     font-size: 25px;
     font-style: bold;
+    font-family: 'Cedarville Cursive', cursive;
 }
 
 .fact {
@@ -36,3 +38,10 @@ html {
     font-style: bold;
 }
 
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 500,
+  'GRAD' 0,
+  'opsz' 48
+}
