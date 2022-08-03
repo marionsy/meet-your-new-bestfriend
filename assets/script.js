@@ -32,8 +32,8 @@ function getDog(dog) {
             $(".barking").text("Barking: " + barking);
             $(".playfulness").text("Playfulness: " + playfulness);
             $(".energy").text("Energy: " + energy);
-            $(".card").removeClass("is-hidden");           
-        
+            $(".card").removeClass("is-hidden");
+
         }
     });
 }
@@ -45,7 +45,10 @@ function saveDog(dog) {
     if (!savedDogs) {
         savedDogs = [];
     }
+
+    // Will retrieve last searched dog
     savedDogs.push(dog);
+    var id = savedDogs.length - 1;
 
     localStorage.setItem("dogs", JSON.stringify(savedDogs));
 
@@ -62,36 +65,71 @@ function saveDog(dog) {
     dogButton.on("click", function (event) {
         event.preventDefault();
         getDog(dog);
+        $("#randomName").text(getSavedName(id));
     })
     $("#searchHistory").append(dogButton);
 }
 
-
-function getname(){
+// Appends first and last name to card
+function getName() {
     $.ajax({
-        method: 'get',
+        method: "GET",
         url: "https://randommer.io/api/Name?nameType=firstname&quantity=1",
-        headers:{'X-Api-Key': 'fa076152de464fcab45e7657f043f76c'},
+        headers: { 'X-Api-Key': 'fa076152de464fcab45e7657f043f76c' },
         contentType: 'application/json',
-        success: function(result){
-             console.log(result)       
-                var name = result[0]
-                $("#randomName").text(name)
-        },
-        error: function ajaxError(json) {
-             console.error('Error: ', json.responseText);
+        success: function (result) {
+            console.log(result);
 
-        // Appends name to card
-    }
-})
+            var firstName = result[0];
+
+            // Array to store random last names
+            var lastNames = ["Wooferson", "Barkley", "Pawter", "Barksalot", "Shakespaw", "Skybarker", "Escobark", "Doggi-dog", "Houndini", "Degeneruff", "Eisenhowler", "Cumberbark", "Poo-chino"];
+            var lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
+
+            var randomName = firstName + " " + lastName;
+            $("#randomName").text(randomName);
+            saveName(randomName);
+        }
+    })
 }
 
+// Function to save name to local storage
+function saveName(name) {
+    var savedNames = JSON.parse(localStorage.getItem("names"));
 
-// On click, calls getDog function
+    if (!savedNames) {
+        savedNames = [];
+    }
+    savedNames.push(name);
+
+    localStorage.setItem("names", JSON.stringify(savedNames));
+}
+
+// Calls API to get dog info and random name
+function getDogAndRandomName(dog) {
+    getDog(dog);
+    getName();
+    saveDog(dog);
+}
+
+// Gets saved name from local storage
+function getSavedName(id) {
+    var savedNames = JSON.parse(localStorage.getItem("names"));
+    return savedNames[id];
+}
+
+// On click, gets dog and random name
 $("#searchButton").on("click", function (event) {
     event.preventDefault();
     var dog = $("#dogSearch").val();
-    getDog(dog);
-    saveDog(dog);
-    getname();
-})
+    getDogAndRandomName(dog);
+});
+
+// On enter keyup event, gets dog and random name
+$(".input").on("keyup", function (event) {
+    if (event.key === "Enter" || event.keyCode === 13) {
+        var dog = $("#dogSearch").val();
+        getDogAndRandomName(dog);
+    }
+});
+
