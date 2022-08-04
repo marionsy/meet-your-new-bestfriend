@@ -74,6 +74,10 @@ function getName() {
     $.ajax({
         method: "GET",
         url: "https://randommer.io/api/Name?nameType=firstname&quantity=1",
+        headers: ("Access-Control-Allow-Origin", "*"),
+        headers: ("Access-Control-Allow-Credentials", "true"),
+        headers: ("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT"),
+        headers: ("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"),
         headers: { 'X-Api-Key': 'fa076152de464fcab45e7657f043f76c' },
         contentType: 'application/json',
         success: function (result) {
@@ -82,7 +86,7 @@ function getName() {
             var firstName = result[0];
 
             // Array to store random last names
-            var lastNames = ["Wooferson", "Barkley", "Pawter", "Barksalot", "Shakespaw", "Skybarker", "Escobark", "Doggi-dog", "Houndini", "Degeneruff", "Eisenhowler", "Cumberbark", "Poo-chino"];
+            var lastNames = ["Wooferson", "Barkley", "Pawter", "Barksalot", "Shakespaw", "Skybarker", "Escobark", "Doggi-dog", "Houndini", "Degeneruff", "Eisenhowler", "Cumberbark", "Poo-chino", "Pawsborne", "Waguilera", "Puppins"];
             var lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
 
             var randomName = firstName + " " + lastName;
