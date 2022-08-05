@@ -1,4 +1,4 @@
-# Meet your New Bestfriend
+# Meet Your New Bestfriend
 The goal is this product is for entertaining the user, you can pick your favorite dog breed and get a cute picture of it with a silly name!
 
 ![Screenshot (13)](https://user-images.githubusercontent.com/63944749/182992596-2079bdd6-1283-4d01-bfec-1c3e0ee2f9ca.png)
