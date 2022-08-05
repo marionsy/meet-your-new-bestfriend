@@ -77,7 +77,7 @@ function getName() {
         headers: ("Access-Control-Allow-Origin", "*"),
         headers: ("Access-Control-Allow-Credentials", "true"),
         headers: ("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT"),
-        headers: ("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, content-type, Access-Control-Request-Method, Access-Control-Request-Headers"),
+        headers: ("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, content-type, Access-Control-Request-Method, Access-Control-Request-Headers, X-Api-Key"),
         headers: { 'X-Api-Key': 'fa076152de464fcab45e7657f043f76c' },
         // contentType: 'application/json',
         success: function (result) {
@@ -135,6 +135,3 @@ $(".input").on("keyup", function (event) {
         getDogAndRandomName(dog);
     }
 });
-
-
-
