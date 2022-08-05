@@ -72,7 +72,7 @@ function saveDog(dog) {
 function getName() {
     $.ajax({
         method: "GET",
-        url:"https://randomuser.me/api/",
+        url:"https://randomuser.me/api/?nat=us",
         contentType: 'application/json',
         success: function (result) {
             console.log(result);
