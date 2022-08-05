@@ -105,8 +105,8 @@ function saveName(name) {
 
 // Calls API to get dog info and random name
 function getDogAndRandomName(dog) {
-    getDog(dog);
     getName();
+    getDog(dog);
     saveDog(dog);
 }
 
