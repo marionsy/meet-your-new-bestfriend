@@ -32,7 +32,6 @@ function getDog(dog) {
             $(".barking").text("Barking: " + barking);
             $(".playfulness").text("Playfulness: " + playfulness);
             $(".energy").text("Energy: " + energy);
-            $(".card").removeClass("is-hidden");
         }
     });
 }
@@ -73,21 +72,21 @@ function saveDog(dog) {
 function getName() {
     $.ajax({
         method: "GET",
-        url: "https://randommer.io/api/Name?nameType=firstname&quantity=1",
-        headers: { 'X-Api-Key': 'fa076152de464fcab45e7657f043f76c' },
+        url:"https://randomuser.me/api/",
         contentType: 'application/json',
         success: function (result) {
             console.log(result);
 
-            var firstName = result[0];
+            var firstName = result.results[0].name.first;
 
             // Array to store random last names
-            var lastNames = ["Wooferson", "Barkley", "Pawter", "Barksalot", "Shakespaw", "Skybarker", "Escobark", "Doggi-dog", "Houndini", "Degeneruff", "Eisenhowler", "Cumberbark", "Poo-chino"];
+            var lastNames = ["Wooferson", "Barkley", "Pawter", "Barksalot", "Shakespaw", "Skybarker", "Escobark", "Doggi-dog", "Houndini", "Degeneruff", "Eisenhowler", "Cumberbark", "Poo-chino", "Pawsborne", "Waguilera", "Puppins"];
             var lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
 
             var randomName = firstName + " " + lastName;
             $("#randomName").text(randomName);
             saveName(randomName);
+            $(".card").removeClass("is-hidden");
         }
     })
 }
@@ -106,8 +105,8 @@ function saveName(name) {
 
 // Calls API to get dog info and random name
 function getDogAndRandomName(dog) {
-    getDog(dog);
     getName();
+    getDog(dog);
     saveDog(dog);
 }
 
@@ -131,4 +130,3 @@ $(".input").on("keyup", function (event) {
         getDogAndRandomName(dog);
     }
 });
-
