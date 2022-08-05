@@ -50,3 +50,21 @@ html {
 .modal-content {
     width: 170px;
 }
+
+/* These postition the links for switching language. Should be moved, but it is 5:14am and I have no patience left. */
+.langlinkDE{
+    position: absolute;
+    right: 50%;
+    bottom: 80%;
+    font-size: 15px;
+    background: rgb(0,0,0);
+    background: linear-gradient(rgba(0,0,0,1) 0%, rgba(255,0,0,1) 35%, rgba(255,204,0,1) 100%);
+}
+.langlinkEN{
+    position: absolute;
+    right: 50%;
+    bottom: 80%;
+    font-size: 15px;
+    background: rgb(22,155,98);
+    background: linear-gradient(90deg, rgba(22,155,98,1) 0%, rgba(255,255,255,1) 35%, rgba(255,136,62,1) 100%);
+}
