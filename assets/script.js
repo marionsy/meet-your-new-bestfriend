@@ -32,7 +32,6 @@ function getDog(dog) {
             $(".barking").text("Barking: " + barking);
             $(".playfulness").text("Playfulness: " + playfulness);
             $(".energy").text("Energy: " + energy);
-            $(".card").removeClass("is-hidden");
         }
     });
 }
@@ -87,6 +86,7 @@ function getName() {
             var randomName = firstName + " " + lastName;
             $("#randomName").text(randomName);
             saveName(randomName);
+            $(".card").removeClass("is-hidden");
         }
     })
 }
