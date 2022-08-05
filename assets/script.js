@@ -1,3 +1,4 @@
+// Gets references to elements
 var dogImage = $("#dogImage");
 var fact = $("#funFact");
 
@@ -12,26 +13,30 @@ function getDog(dog) {
         success: function (result) {
             console.log(result);
 
-            // Appends image to card
-            var image = result[0].image_link;
-            var imageEl = $("<img>");
+            if (result.length === 0) {
+                $(".modal").addClass('is-active');
+            } else {
+                // Appends image to card
+                var image = result[0].image_link;
+                var imageEl = $("<img>");
 
-            imageEl.attr("src", image);
-            imageEl.attr("alt", result[0].name)
-            dogImage.children("#img").append(imageEl);
+                imageEl.attr("src", image);
+                imageEl.attr("alt", result[0].name)
+                dogImage.children("#img").append(imageEl);
 
-            // Appends fun facts to card
-            var drooling = result[0].drooling;
-            var shedding = result[0].shedding;
-            var barking = result[0].barking;
-            var playfulness = result[0].playfulness;
-            var energy = result[0].energy;
+                // Appends fun facts to card
+                var drooling = result[0].drooling;
+                var shedding = result[0].shedding;
+                var barking = result[0].barking;
+                var playfulness = result[0].playfulness;
+                var energy = result[0].energy;
 
-            $(".drooling").text("Drooling: " + drooling);
-            $(".shedding").text("Shedding: " + shedding);
-            $(".barking").text("Barking: " + barking);
-            $(".playfulness").text("Playfulness: " + playfulness);
-            $(".energy").text("Energy: " + energy);
+                $(".drooling").text("Drooling: " + drooling);
+                $(".shedding").text("Shedding: " + shedding);
+                $(".barking").text("Barking: " + barking);
+                $(".playfulness").text("Playfulness: " + playfulness);
+                $(".energy").text("Energy: " + energy);
+            }
         }
     });
 }
@@ -72,7 +77,7 @@ function saveDog(dog) {
 function getName() {
     $.ajax({
         method: "GET",
-        url:"https://randomuser.me/api/?nat=us",
+        url: "https://randomuser.me/api/?nat=us",
         contentType: 'application/json',
         success: function (result) {
             console.log(result);
@@ -86,7 +91,11 @@ function getName() {
             var randomName = firstName + " " + lastName;
             $("#randomName").text(randomName);
             saveName(randomName);
-            $(".card").removeClass("is-hidden");
+
+            // If modal isn't active, displayes image and name
+            if (!$(".modal").hasClass("is-active")) {
+                $(".card").removeClass("is-hidden");
+            }
         }
     })
 }
@@ -130,3 +139,9 @@ $(".input").on("keyup", function (event) {
         getDogAndRandomName(dog);
     }
 });
+
+// Removes modal class is active 
+$('.modal').on('click', function () {
+    $(".modal").removeClass('is-active');
+    $("#dogSearch").val('');
+})

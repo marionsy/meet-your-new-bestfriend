@@ -8,7 +8,8 @@ html {
     background-image: url("https://cdn11.bigcommerce.com/s-bv977zbkdy/images/stencil/1000x1000/products/5320/26234/3552__21168.1616075166.jpg?c=1");
 }
 
-.hero, #searchButton {
+.hero,
+#searchButton {
     background-color: rgb(115, 147, 178);
 }
 
@@ -39,9 +40,13 @@ html {
 }
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 500,
-  'GRAD' 0,
-  'opsz' 48
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 500,
+        'GRAD' 0,
+        'opsz' 48
+}
+
+.modal-content {
+    width: 170px;
 }
