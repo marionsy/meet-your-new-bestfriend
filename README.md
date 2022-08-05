@@ -6,7 +6,6 @@ The goal is this product is for entertaining the user, you can pick your favorit
 ##APIs, Frameworks, and other resources used:
 - [JQuery](https://jquery.com/)
 - [Google Fonts](https://developers.google.com/fonts) 
-- [Bulma]()
+- [Bulma](https://bulma.io/)
 - [Dogs API](https://api-ninjas.com/api/dogs)
 - [RandomUser.me](https://randomuser.me/)
-
