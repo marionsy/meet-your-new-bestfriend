@@ -92,7 +92,7 @@ function getName() {
             $("#randomName").text(randomName);
             saveName(randomName);
 
-            // If modal isn't active, displayes image and name
+            // If modal isn't active, displays image and name
             if (!$(".modal").hasClass("is-active")) {
                 $(".card").removeClass("is-hidden");
             }
