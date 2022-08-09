@@ -14,7 +14,7 @@ The goal of this product is for entertaining the user, you can pick your favorit
 
 <h2> Screenshot: </h2>
 
-![Screenshot (13)](https://user-images.githubusercontent.com/63944749/182992596-2079bdd6-1283-4d01-bfec-1c3e0ee2f9ca.png)
+![image](https://user-images.githubusercontent.com/105673031/183554934-473301da-e6fb-4db1-8774-ab5715b4e544.png) 
 
 # <h2> APIs, Frameworks, and other resources used: </h2>
  * [JQuery](https://jquery.com/)
