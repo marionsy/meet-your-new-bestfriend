@@ -4,7 +4,7 @@
 The goal of this product is for entertaining the user, you can pick your favorite dog breed and get a cute picture of it with facts and a silly name!
 
 # <h2> Functionality: </h2>
-  * Users will enter a dog breed in the search bar
+  * Users will enter a dog breed in the search bar and click search or press the enter key to return results
   * If the dog breed is not listed, a modal will pop up asking the users to enter another breed
   * When a correct breed is entered, an image of the breed will display
   * A random first name combined with a random last name from an array will also display
@@ -15,6 +15,7 @@ The goal of this product is for entertaining the user, you can pick your favorit
 <h2> Screenshot: </h2>
 
 ![image](https://user-images.githubusercontent.com/105673031/183554934-473301da-e6fb-4db1-8774-ab5715b4e544.png) 
+
 
 # <h2> APIs, Frameworks, and other resources used: </h2>
  * [JQuery](https://jquery.com/)
