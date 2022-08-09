@@ -3,7 +3,7 @@ var dogImage = $("#dogImage");
 var fact = $("#funFact");
 
 // Function to search for a dog
-function getDog(dog) {
+function getDog(dog, fromSearch) {
     var apiUrl = "https://api.api-ninjas.com/v1/dogs?name=" + dog;
     $.ajax({
         url: apiUrl,
@@ -36,6 +36,11 @@ function getDog(dog) {
                 $(".barking").text("Barking: " + barking);
                 $(".playfulness").text("Playfulness: " + playfulness);
                 $(".energy").text("Energy: " + energy);
+
+                if (fromSearch) {
+                    getName();
+                    saveDog(dog);
+                }
             }
         }
     });
@@ -67,7 +72,7 @@ function saveDog(dog) {
 
     dogButton.on("click", function (event) {
         event.preventDefault();
-        getDog(dog);
+        getDog(dog, false);
         $("#randomName").text(getSavedName(id));
     })
     $("#searchHistory").append(dogButton);
@@ -112,13 +117,6 @@ function saveName(name) {
     localStorage.setItem("names", JSON.stringify(savedNames));
 }
 
-// Calls API to get dog info and random name
-function getDogAndRandomName(dog) {
-    getName();
-    getDog(dog);
-    saveDog(dog);
-}
-
 // Gets saved name from local storage
 function getSavedName(id) {
     var savedNames = JSON.parse(localStorage.getItem("names"));
@@ -129,14 +127,16 @@ function getSavedName(id) {
 $("#searchButton").on("click", function (event) {
     event.preventDefault();
     var dog = $("#dogSearch").val();
-    getDogAndRandomName(dog);
+    getDog(dog, true);
+    $("#dogSearch").val('')
 });
 
 // On enter keyup event, gets dog and random name
 $(".input").on("keyup", function (event) {
     if (event.key === "Enter" || event.keyCode === 13) {
         var dog = $("#dogSearch").val();
-        getDogAndRandomName(dog);
+        getDog(dog, true);
+        $("#dogSearch").val('')
     }
 });
 
