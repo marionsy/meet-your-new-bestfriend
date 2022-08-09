@@ -1,7 +1,7 @@
 # Meet Your New Bestfriend
 
 <h2> Description: </h2>
-The goal is this product is for entertaining the user, you can pick your favorite dog breed and get a cute picture of it with facts and a silly name!
+The goal of this product is for entertaining the user, you can pick your favorite dog breed and get a cute picture of it with facts and a silly name!
 
 # <h2> Functionality: </h2>
   * Users will enter a dog breed in the search bar
