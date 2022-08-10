@@ -10,8 +10,7 @@ The goal of this product is for entertaining the user, you can pick your favorit
   * A random first name combined with a random last name from an array will also display
   * Fun facts about the breed will also display
   * If users search for another breed, they will be able to select previously searched dogs and it will display again
-
-
+ 
 <h2> Screenshot: </h2>
 
 ![image](https://user-images.githubusercontent.com/105673031/183554934-473301da-e6fb-4db1-8774-ab5715b4e544.png) 
@@ -26,3 +25,20 @@ The goal of this product is for entertaining the user, you can pick your favorit
  
  <h2> Link to deployed application: </h2>
  https://marionsy.github.io/meet-your-new-bestfriend/ 
+ 
+# <h2> Deutsch <h2>
+ Dieses Produkt dient Unterhaltungszwecken. Wenn eine Hundrasse ausgewält wird, wird Ihnen ein bild des Hundes präsentiert, dem ein zufälliger Name zugeordnet wurde.
+ 
+# <h2> Funktionalität <h2>
+ * Benutzer stellen der Suchleiste eine Hunderasse zur Verfügung.
+ * Wenn die Hunderasse ungültig ist, benachrichtigt ein Modal den Benutzer auf Englisch, um eine andere Hunderasee auszuwählen.
+ * Wenn eine gültige Rasse eingegeben wird, wird ein Bild des Hundes neben einem zufälligen Name angezeigt.
+ * Fakten über die Rasse werden ebenfalls angezeigt.
+ * Wenn die Benutzer nach einem anderen Hund suchen, wird die vorgerige suche im lokalen speicher gespeichert, um später, darauf zugreifen zu können.
+  
+# <h2> Programmierschnittstellen, CSS-Frameworks, und andere Ressourcen: <h2>
+ * [JQuery](https://jquery.com/)
+ * [Google Fonts](https://developers.google.com/fonts) 
+ * [Bulma](https://bulma.io/)
+ * [Dogs API](https://api-ninjas.com/api/dogs)
+ * [RandomUser.me](https://randomuser.me/)
